@@ -1,0 +1,492 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0px;
+  padding: 0px;
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+a, a:hover, a:focus {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 85%;
+  max-width: 1170px;
+  margin: 0 auto;
+  position: relative;
+}
+
+section {
+  padding: 100px 0;
+}
+
+/* 上方是是其他的 CSS 基礎樣式設定 */
+
+header {
+  position:  fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  background-color: #222;
+  z-index: 100;
+}
+
+#logo {
+  float: left;
+}
+
+.nav {
+  float: right;
+}
+
+.nav li {
+  display: inline-block;
+}
+
+.nav li a {
+  color: #fff;
+  text-transform: capitalize;
+  display: block;
+  padding: 10px 12px;
+}
+
+/*設定背景圖片的路徑為 ../images/profile.jpg。這裡插入圖片的方式跟寫 <img> 標籤的方法很類似，只是這裡我們會用 url(圖片路徑); 的語法來撰寫。更多關於 background 相關的說明，請參考 W3C 網站。
+設定背景圖會填滿整個 section 的盒子。
+設定背景圖水平與垂直置中對齊。
+設定背景圖不重覆出現，也就是只出現一次。
+最後兩行的 CSS 設定背景圖 width、height 長寬比例皆為 100%。
+*/
+.home_bg {
+  background-image: url(../images/profile.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+/*設定這個區塊以 table 顯示，讓我們接下來可以對 container_table 所包覆的東西設定垂直置中。
+設定 width、height 長寬比例皆為 100%。
+設定 container_table 設定為相對位置。
+*/
+.container_table {
+  display: table;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/*設定 container_table_cell 為表格中的內容
+設定表格內容水平、垂直置中對齊。
+設定 container_table_cell 表格中的 h2 標籤為白色文字。
+設定 container_table_cell 表格中的 h2 標籤字首大寫。
+設定 container_table_cell 表格中的 h2 標籤字體大小為 54px。
+*/
+.container_table_cell {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.container_table_cell h2 {
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 54px;
+}
+
+/*設定社群網站圖示為白色。
+設定社群網站圖示以 inline-block 顯示。
+設定社群網站圖示寬 30px、高 40px。
+設定社群網站圖示的行高為 40px、字體大小為 19px。
+設定社群網站圖示右邊的 margin 為 7px。
+*/
+.social_icons a {
+  color: #fff;
+  display: inline-block;
+  width: 30px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 19px;
+  margin-right: 7px;
+}
+
+/*加上一層類似黑色半透明的區塊*/
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+h2 {
+  margin-bottom: 75px;
+  text-align: center;
+  font-size: 40px;
+  line-height: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/*設定兩個區塊為浮動，靠左對齊。
+設定兩個區塊能左右並排，別且各佔一半的畫面。
+設定兩個區塊中間的空格，我們會使用 padding。注意我們用 padding 而不是用 margin 來設定間距，是因為這兩個區塊已經分別佔了畫面的一半，使用 margin 將彼此推開會讓
+兩個區塊都超過 50%，右邊的區塊就會因為 float: left; 的關係被擠到下一行。
+*/
+.col-left, .col-right {
+  float: left;
+  width: 50%;
+  padding: 0 15px;
+}
+
+.personal-info h3 {
+  font-size: 15px;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+  text-transform: capitalize;
+}
+
+.personal-info p {
+  color: #767676;
+  line-height: 24px;
+  text-align: justify;
+}
+
+/*設定 skill 區塊上下的空白*/
+.skill {
+  margin: 30px auto;
+}
+
+.skill li {
+  font-size: 15px;
+  line-height: 35px;
+  text-transform: capitalize;
+}
+
+.button-group .download_cv, .button-group .hire_me {
+  display: inline-block;
+}
+
+.button-group .download_cv {
+  margin-right: 18px;
+}
+
+/*設定按鈕以 block 顯示，<a></a> 標籤預設以 inline 顯示，為了後續可以設定 padding 和 margin，所以需要特別設定。
+設定按鈕文字顏色。
+設定按鈕邊框寬度 1px、實線、黑色。更多 border 語法的設定可以看這裡。
+設定按鈕邊框圓角 border-radius 為 10px。
+設定按鈕的內部間距。從 DevTools 來看，綠色的區域是我們設定的 padding，文字就不會和 border 黏在一起。
+*/
+.button-group a {
+  display: block;
+  color: #000;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 10px 38px;
+  text-transform: capitalize;
+}
+/*
+使用 pseudo-class 設定 CSS 樣式
+設定滑鼠滑過按鈕時背景為黑色、文字為白色。
+設定滑鼠滑過按鈕時轉場效果，讓它有緩慢進入的效果。
+由於轉場效果是在 CSS3 中才新增的，所以不支援較舊的瀏覽器版本，
+所以我們必須加上各個常見瀏覽器的前綴字元，讓語法可以指定瀏覽器使用，未來在實作專案中會常常使用到
+*/
+.button-group a:hover {
+  background: #000;
+  color: #fff;
+  -webkit-transition: all .4s linear;
+  -moz-transition: all .4s linear;
+  -ms-transition: all .4s linear;
+  -o-transition: all .4s linear;
+  transition: all .4s linear;
+}
+
+/*使用 pseudo-element 設定 clearfix
+設定 display 為 table，這裡你要設定為 display: block; 也是可以的。
+設定 clear: both;，可以一次清除 float: left; 和 float: right; 的浮動。
+*/
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/*調整這個區塊的背景顏色。
+下方的三個區塊各佔三分之一的空間。
+圖示大小、小標題和段落文字的設定。*/
+.my_service {
+  background-color: #f9f9f9;
+}
+
+.service-content {
+  float: left;
+  width: 33.33333333%;
+  padding: 0 15px;
+}
+
+.service-content i {
+  font-size: 30px;
+  line-height: 46px;
+}
+
+.service-content h3 {
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin-top: 13px;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+}
+
+.service-content p {
+  color: #767676;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 24px;
+}
+/*設定 col-horizontal 區塊下方的 padding。
+設定 col-horizontal 區塊下方的線框作為設計稿中看到的水平線。我們使用 pseudo-class（偽類別）.col-horizontal:last-child 來設定樣式：
+設定最後一個 col-horizontal 區塊下方不要有線框。
+*/
+.col-horizontal {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #767676;
+}
+
+.col-horizontal:last-child {
+  border-bottom: 0;
+}
+
+h3.resume-subtitle {
+  font-size: 20px;
+  margin-left: 15px;
+  margin-top: 12px;
+  text-transform: capitalize;
+}
+
+/*在實務上，這種 2 欄或是 3 欄的切版，我們時常會將該區塊的 class 命名為 col-item，
+所以選擇使用繼承選擇器明確的選擇我們要設定的區塊為「.col-horizontal 區塊裡面的 .col-item 區塊」
+*/
+.col-horizontal .col-item {
+  float: left;
+  width: 50%;
+  padding: 0 15px;
+}
+
+.experience-year {
+  background-color: #000;
+  color: #fff;
+  display: inline-block;
+  padding: 4px 20px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.resume-detail h4 {
+  font-size: 16px;
+  line-height: 30px;
+  text-transform: capitalize;
+}
+
+.resume-detail h6 {
+  font-size: 12px;
+  margin-bottom: 9px;
+  text-transform: capitalize;
+}
+
+.resume-detail p {
+  line-height: 22px;
+}
+
+/*如果希望背景圖能如這個單元的示範影片一樣可以固定不動，我們就會用到 Parallax 的設定。*/
+.quotes {
+  background-image: url(../images/abg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  width: 100%;
+}
+
+.quote-inner {
+  color: #fff;
+  text-align: center;
+}
+
+.quote-inner h3 {
+  font-size: 28px;
+  text-transform: capitalize;
+}
+
+.quote-inner p {
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.quote-inner a {
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 11px;
+  padding: 12px 49px;
+  display: inline-block;
+  margin-top: 22px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/*圖片以 3 欄式的切版來排列。
+滑鼠滑過圖片會有陰影並且讓圖片有向上移動的效果。*/
+
+.works {
+  background-color: #f7f7f7;
+}
+
+.col-work {
+  float: left;
+  width: 33.3333333333%;
+  padding: 0 15px;
+}
+/*設定連結與父層區塊（col-work）的上方與左方邊界為 0，是等等設定圖片在滑鼠滑過時，
+有向上移動效果的事前準備。*/
+.col-work a {
+  display: block;
+  margin-bottom: 14px;
+  position: relative;
+  -webkit-transition: .2s linear;
+  -moz-transition: .2s linear;
+  -ms-transition: .2s linear;
+  -o-transition: .2s linear;
+  transition: .2s linear;
+  top: 0;
+  left: 0;
+}
+/*設定陰影。這裡 box-shadow 後面的 5 個數值分別是設定：
+水平陰影位移、垂直陰影位移、陰影模糊程度、陰影的範圍大小，最後一個是陰影的顏色。
+改變 top 的數值來設定向上移動的效果。*/
+.col-work a:hover {
+  box-shadow: 0 16px 22px 0 rgba(90, 91, 95, 0.3);
+  top: -5px;
+}
+
+/*設定 contact-form 區塊水平置中，使用 auto-margin 的方法。*/
+.contact-form {
+  width: 65%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-form .form-input:first-child,
+.contact-form .form-input:nth-child(2) {
+  float: left;
+  width: 50%;
+  padding: 0 15px;
+}
+
+.contact-form .form-input:nth-child(3) {
+  width: 100%;
+  padding: 0 15px;
+}
+
+/*設定寬度。
+我們只想要設定下方的線框，所以要先設定取消原先所有的線框。
+設定下方線框的樣式。注意：一定要先取消原先的線框才能正確的設定 border-bottom 喔。
+設定文字字首大寫。
+設定間距。
+設定 outline 為 none 來取消我們點選輸入框之後會產生的藍色外框。更多 outline 的設定你可以參考 W3C 的說明。
+*/
+.contact-form input.form-style {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #333;
+  text-transform: capitalize;
+  padding-bottom: 19px;
+  margin-bottom: 12px;
+  outline: none;
+}
+
+.contact-form textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #333;
+  outline: none;
+}
+
+.form-submit {
+  text-align: left;
+  padding: 0 15px;
+}
+
+.form-submit input {
+  font-size: 16px;
+  text-transform: capitalize;
+  background-color: transparent;
+  border: 1px solid #000;
+  border-radius: 12px;
+  padding: 15px 60px;
+  margin-top: 16px;
+  margin-bottom: 14px;
+  cursor: pointer;
+  -webkit-transition: .4s linear;
+  -moz-transition: .4s linear;
+  -ms-transition: .4s linear;
+  -o-transition: .4s linear;
+  transition: .4s linear;
+}
+
+.form-submit input:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+footer {
+  padding: 80px 0;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.footer-content p {
+  line-height: 22px;
+}
+
+.footer-social-icon a i {
+  color: #fff;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 15px;
+  margin-right: 15px;
+}
